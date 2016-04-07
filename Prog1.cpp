@@ -1,7 +1,10 @@
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
-
+#include<string>
+#include<vector>
+#include <stdlib.h>
+#define N 10000
 using namespace std;
 int MaxSubArray(int A[],int size)
 {
@@ -17,16 +20,35 @@ int MaxSubArray(int A[],int size)
 }
 
 int main()
-{int* Array=NULL;
- int n=0;
+{
+int* Array=NULL;
+ Array=new int[N];
+ for(int i=0;i<N;i++)
+ Array[i]=0;
 
-	int hold=0;
-		cin>>n;
-		Array=new int[n];
-		for(int i=0;i<n;i++)
-		cin>>Array[i];
-		hold=MaxSubArray(Array,n);
-		cout<<hold;
+	string t;
 	
+	int size=0;
+	while(1)
+	{
+		cin>>t;
+		if(t=="x")
+		break;
+		
+			Array[size++]=atoi(t.c_str());
+		
+		
+		
+	}
 	
+	/*for(int i=0;i<Array.size();i++)
+	 cout<<Array[i];
+	 cout<<endl;
+	 cout<<Array.size();*/
+		//cin>>Array[i];
+		cout<<size<<endl;
+		
+		cout<<MaxSubArray(Array,size);
+	
+	return 0;
 }
